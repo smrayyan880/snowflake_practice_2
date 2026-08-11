@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: s1
+    database: dbt_customers
+    schema: dbt_schema  
+    tables:
+      - name: tbl_customer
