@@ -6,3 +6,4 @@ sources:
     schema: dbt_schema  
     tables:
       - name: tbl_customer
+      - name: tbl_nation
