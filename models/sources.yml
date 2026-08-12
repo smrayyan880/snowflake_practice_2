@@ -7,3 +7,6 @@ sources:
     tables:
       - name: tbl_customer
       - name: tbl_nation
+      - name: tbl_tickets
+      - name: tbl_bus_tickets
+      
