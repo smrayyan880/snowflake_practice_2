@@ -1,8 +1,34 @@
 version: 2
-models :
+
+models:
   - name: vw_sample_cust
-    columns :
-     - name : customer_id
-       tests:
-        - unique
-        - not_null
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+
+  - name: vw_cust_orders
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+
+      - name: status
+        tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - 'completed'
+                  - 'returned'
+                  - 'shipped'
+                  - 'placed'
+                  - 'return_pending'
+
+      - name: customer_id
+        tests:
+          - relationships :
+             arguments:
+              to: ref('vw_sample_cust')
+              field: customer_id
